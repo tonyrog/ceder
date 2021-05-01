@@ -202,7 +202,7 @@ dispatch(TTY,Node,Key,Default) ->
 
 lint(TTY, Node, Default) ->
     case get_node(Node) of %% just unpack one level to check
-	{prog,_,Fs} ->
+	{prog,_,_} ->
 	    {_,_,Fs} = unpack(Node), %% it's a program unpack and lint
 	    lint_(TTY, Node, Node, Default, Fs);
 	{'function',_,_Name,_Arity,_Cs} -> 
